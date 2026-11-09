@@ -1,45 +1,150 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080D18">
-<title>PLAY GAMES | GAMELOCAL</title>
+<title>GAMELOCAL - Tu universo gamer</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#080D18;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:25px;background:#0D1728}
-.logo{font-size:30px;font-weight:bold;color:#60A5FA;letter-spacing:3px}
-header p{color:#94A3B8;margin-top:8px}
-.hero{text-align:center;padding:35px 15px}
-.hero h2{font-size:27px}
-.hero span{color:#60A5FA}
-.hero p{color:#94A3B8;margin-top:10px}
-.panel{max-width:900px;margin:auto;padding:15px}
-input,select{width:100%;padding:14px;margin-bottom:10px;
-border:1px solid #263B5B;border-radius:10px;
-background:#101B2D;color:white;font-size:15px}
-button{border:0;background:#2563EB;color:white;
-padding:13px 18px;border-radius:9px;font-weight:bold}
-button:disabled{opacity:.5}
-#status{text-align:center;color:#94A3B8;padding:18px}
-.container{max-width:1100px;margin:auto;padding:15px;
-display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.game{background:#14233A;border:1px solid #263B5B;
-border-radius:14px;overflow:hidden}
-.game img{width:100%;aspect-ratio:1;object-fit:cover}
-.info{padding:12px}
-.info h3{font-size:15px;margin-bottom:8px}
-.info p{font-size:12px;color:#94A3B8;margin-bottom:12px}
-.info a{display:block;text-align:center;background:#2563EB;
-padding:11px;color:white;text-decoration:none;border-radius:8px;
-font-size:12px;font-weight:bold}
-.more{text-align:center;padding:25px}
-footer{text-align:center;padding:25px;color:#64748B}
-@media(min-width:650px){
-.container{grid-template-columns:repeat(4,1fr)}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080D18;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 25px 15px;
+  text-align: center;
+  background: #0D1728;
+}
+
+.logo {
+  color: #60A5FA;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+header p {
+  color: #94A3B8;
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 14px;
+  background: #101B2D;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  background: #1A2D49;
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: 9px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #2563EB;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px 35px;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.hero span {
+  color: #60A5FA;
+}
+
+.hero p {
+  color: #94A3B8;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 15px;
+}
+
+.card {
+  background: linear-gradient(145deg,#172944,#101A2B);
+  border: 1px solid #263B5B;
+  border-radius: 17px;
+  padding: 25px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  color: #60A5FA;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.number {
+  color: #60A5FA;
+  font-size: 12px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563EB;
+  color: white;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #3B82F6;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #64748B;
+  border-top: 1px solid #1E293B;
+}
+
+@media (min-width: 650px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .card {
+    margin: 0;
+  }
 }
 </style>
 </head>
@@ -47,240 +152,74 @@ footer{text-align:center;padding:25px;color:#64748B}
 <body>
 
 <header>
-<div class="logo">🎮 GAMELOCAL</div>
-<p>PLAY GAMES · FREE ANDROID GAMES</p>
+  <div class="logo">🎮 GAMELOCAL</div>
+  <p>Tu universo gamer y digital</p>
 </header>
 
+<nav>
+  <a href="index.html">INICIO</a>
+  <a href="playgames.html">PLAY GAMES</a>
+  <a href="indiegames.html">INDIE GAMES</a>
+  <a href="paygames.html">PAY GAMES</a>
+  <a href="networks.html">NETWORKS</a>
+</nav>
+
 <section class="hero">
-<h2>DISCOVER YOUR <span>NEXT GAME</span></h2>
-<p>Explore free Android games from Google Play.</p>
+  <h1>DESCUBRE TU <span>PRÓXIMO JUEGO</span></h1>
+  <p>
+    Explora videojuegos, descubre nuevas aventuras
+    y encuentra herramientas digitales.
+  </p>
 </section>
 
-<section class="panel">
+<main class="container">
 
-<input id="apiKey" type="password"
-placeholder="Enter your API key">
+  <section class="card">
+    <span class="number">01 / VIDEOJUEGOS</span>
+    <h2>🎮 PLAY GAMES</h2>
+    <p>
+      Descubre juegos gratuitos de Google Play
+      de todos los géneros.
+    </p>
+    <a class="btn" href="playgames.html">EXPLORAR →</a>
+  </section>
 
-<input id="search" type="search"
-placeholder="Search free games...">
+  <section class="card">
+    <span class="number">02 / INDEPENDIENTES</span>
+    <h2>🕹️ INDIE GAMES</h2>
+    <p>
+      Descubre juegos independientes
+      y proyectos originales.
+    </p>
+    <a class="btn" href="indiegames.html">EXPLORAR →</a>
+  </section>
 
-<select id="category">
-<option value="all">All categories</option>
-</select>
+  <section class="card">
+    <span class="number">03 / PREMIUM</span>
+    <h2>💎 PAY GAMES</h2>
+    <p>
+      Encuentra videojuegos de pago,
+      sus precios y enlaces oficiales.
+    </p>
+    <a class="btn" href="paygames.html">EXPLORAR →</a>
+  </section>
 
-<button id="start">LOAD FREE GAMES</button>
+  <section class="card">
+    <span class="number">04 / HERRAMIENTAS</span>
+    <h2>🛠️ NETWORKS</h2>
+    <p>
+      Descubre aplicaciones de edición,
+      diseño y creatividad.
+    </p>
+    <a class="btn" href="networks.html">EXPLORAR →</a>
+  </section>
 
-</section>
+</main>
 
-<p id="status">Enter your API key to start.</p>
-
-<main class="container" id="games"></main>
-
-<div class="more">
-<button id="more" hidden>LOAD MORE GAMES</button>
-</div>
-
-<footer>© 2026 GAMELOCAL · PLAY GAMES</footer>
-
-<script>
-const API = "https://playapi.info/api/v1";
-
-const keyInput = document.getElementById("apiKey");
-const searchInput = document.getElementById("search");
-const categorySelect = document.getElementById("category");
-const statusText = document.getElementById("status");
-const gamesBox = document.getElementById("games");
-const startButton = document.getElementById("start");
-const moreButton = document.getElementById("more");
-
-let currentPage = 1;
-let loading = false;
-let allGames = [];
-let lastPages = null;
-
-function getCategory(game){
- return String(game.category || game.category_id || "");
-}
-
-function renderGames(){
- const term = searchInput.value.toLowerCase();
- const category = categorySelect.value;
-
- const filtered = allGames.filter(game=>{
-  const name = String(game.title || game.name || "");
-  const matchesName = name.toLowerCase().includes(term);
-  const matchesCategory =
-   category === "all" || getCategory(game) === category;
-  return matchesName && matchesCategory;
- });
-
- gamesBox.innerHTML = "";
-
- filtered.forEach(game=>{
-  const name = game.title || game.name || "Unknown game";
-  const id = game.id || game.package_name || game.app_id;
-  const image = game.icon || game.icon_url || game.iconUrl;
-
-  if(!id) return;
-
-  const card = document.createElement("article");
-  card.className = "game";
-
-  const img = document.createElement("img");
-  img.src = image || "https://placehold.co/400x400/14233A/60A5FA?text=GAME";
-  img.alt = name;
-  img.loading = "lazy";
-
-  const info = document.createElement("div");
-  info.className = "info";
-
-  const title = document.createElement("h3");
-  title.textContent = name;
-
-  const description = document.createElement("p");
-  description.textContent =
-   getCategory(game).replace("GAME_", "") || "Android game";
-
-  const link = document.createElement("a");
-  link.href = "https://play.google.com/store/apps/details?id=" +
-   encodeURIComponent(id);
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "VIEW ON GOOGLE PLAY ↗";
-
-  info.append(title,description,link);
-  card.append(img,info);
-  gamesBox.append(card);
- });
-
- updateCategories();
-
- if(filtered.length === 0){
-  gamesBox.innerHTML =
-   '<p style="color:#94A3B8">No games found.</p>';
- }
-}
-
-function updateCategories(){
- const previous = categorySelect.value;
- const categories = [...new Set(
-  allGames.map(getCategory).filter(Boolean)
- )].sort();
-
- categorySelect.innerHTML =
-  '<option value="all">All categories</option>';
-
- categories.forEach(cat=>{
-  const option = document.createElement("option");
-  option.value = cat;
-  option.textContent = cat.replace("GAME_", "").replaceAll("_"," ");
-  categorySelect.append(option);
- });
-
- if(categories.includes(previous)){
-  categorySelect.value = previous;
- }
-}
-
-async function loadGames(reset=false){
- if(loading) return;
-
- const key = keyInput.value.trim();
-
- if(!key){
-  statusText.textContent = "Please enter your API key.";
-  return;
- }
-
- if(reset){
-  currentPage = 1;
-  allGames = [];
-  lastPages = null;
-  gamesBox.innerHTML = "";
- }
-
- loading = true;
- startButton.disabled = true;
- moreButton.disabled = true;
- statusText.textContent = "Loading free Android games...";
-
- try{
-  const params = new URLSearchParams({
-   free:"true",
-   status:"live",
-   page:String(currentPage),
-   per:"100",
-   sort:"installs",
-   order:"desc"
-  });
-
-  const term = searchInput.value.trim();
-  if(term) params.set("q",term);
-
-  const response = await fetch(
-   API + "/search?" + params.toString(),
-   {headers:{"X-API-Key":key}}
-  );
-
-  const data = await response.json();
-
-  if(!response.ok || data.ok === false){
-   throw new Error(data.error || "API request failed.");
-  }
-
-  const results = data.results || [];
-
-  // Keep only Google Play game categories.
-  const onlyGames = results.filter(game=>
-   getCategory(game).startsWith("GAME_")
-  );
-
-  const existing = new Set(
-   allGames.map(game=>game.id || game.package_name || game.app_id)
-  );
-
-  onlyGames.forEach(game=>{
-   const id = game.id || game.package_name || game.app_id;
-   if(id && !existing.has(id)){
-    allGames.push(game);
-    existing.add(id);
-   }
-  });
-
-  lastPages = data.pages || null;
-  currentPage++;
-
-  renderGames();
-
-  const remaining = data._tokens?.remaining ??
-   data._tokens?.available;
-
-  statusText.textContent =
-   allGames.length + " free Android games loaded." +
-   (remaining !== undefined ?
-    " Tokens remaining: " + remaining : "");
-
-  moreButton.hidden =
-   !lastPages || currentPage > lastPages;
-
- }catch(error){
-  statusText.textContent = "Error: " + error.message;
- }finally{
-  loading = false;
-  startButton.disabled = false;
-  moreButton.disabled = false;
- }
-}
-
-startButton.addEventListener("click",()=>loadGames(true));
-moreButton.addEventListener("click",()=>loadGames(false));
-
-searchInput.addEventListener("keydown",event=>{
- if(event.key === "Enter") loadGames(true);
-});
-
-categorySelect.addEventListener("change",renderGames);
-</script>
+<footer>
+  © 2026 GAMELOCAL
+  <p>Tu universo gamer y digital.</p>
+</footer>
 
 </body>
 </html>
