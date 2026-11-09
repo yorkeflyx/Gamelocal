@@ -1,225 +1,140 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080D18">
-<title>GAMELOCAL - Tu universo gamer</title>
-
+<title>GAMELOCAL - Play Games</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #080D18;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  padding: 25px 15px;
-  text-align: center;
-  background: #0D1728;
-}
-
-.logo {
-  color: #60A5FA;
-  font-size: 32px;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-
-header p {
-  color: #94A3B8;
-  margin-top: 8px;
-}
-
-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 14px;
-  background: #101B2D;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  color: white;
-  background: #1A2D49;
-  text-decoration: none;
-  padding: 11px 14px;
-  border-radius: 9px;
-  white-space: nowrap;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  background: #2563EB;
-}
-
-.hero {
-  text-align: center;
-  padding: 50px 20px 35px;
-}
-
-.hero h1 {
-  font-size: 30px;
-  margin-bottom: 14px;
-}
-
-.hero span {
-  color: #60A5FA;
-}
-
-.hero p {
-  color: #94A3B8;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 850px;
-  margin: auto;
-  padding: 15px;
-}
-
-.card {
-  background: linear-gradient(145deg,#172944,#101A2B);
-  border: 1px solid #263B5B;
-  border-radius: 17px;
-  padding: 25px;
-  margin-bottom: 18px;
-}
-
-.card h2 {
-  color: #60A5FA;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: #CBD5E1;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.number {
-  color: #60A5FA;
-  font-size: 12px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.btn {
-  display: inline-block;
-  background: #2563EB;
-  color: white;
-  text-decoration: none;
-  padding: 13px 20px;
-  border-radius: 9px;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background: #3B82F6;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  color: #64748B;
-  border-top: 1px solid #1E293B;
-}
-
-@media (min-width: 650px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-
-  .card {
-    margin: 0;
-  }
-}
+*{box-sizing:border-box}
+body{margin:0;background:#080e1c;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px;background:#101a2d}
+header a{color:#68aaff;text-decoration:none}
+h1{margin-bottom:5px}
+main{padding:18px}
+input{width:100%;padding:15px;background:#142139;border:1px solid #30476b;border-radius:12px;color:white;font-size:16px}
+.categories{display:flex;gap:9px;overflow-x:auto;padding:18px 0}
+button{background:#172b49;color:white;border:0;padding:11px 16px;border-radius:20px;white-space:nowrap}
+button.active{background:#287cff}
+#games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.game{background:#142139;border-radius:14px;overflow:hidden}
+.game img{width:100%;aspect-ratio:1;object-fit:cover}
+.game h3{font-size:14px;margin:12px}
+.game a{display:block;text-align:center;background:#287cff;color:white;padding:11px;margin:10px;border-radius:9px;text-decoration:none;font-size:13px}
+#empty{text-align:center;color:#9eabc0}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">🎮 GAMELOCAL</div>
-  <p>Tu universo gamer y digital</p>
+<a href="index.html">← HOME</a>
+<h1>PLAY GAMES</h1>
+<p>Discover free Android games</p>
 </header>
 
-<nav>
-  <a href="index.html">INICIO</a>
-  <a href="playgames.html">PLAY GAMES</a>
-  <a href="indiegames.html">INDIE GAMES</a>
-  <a href="paygames.html">PAY GAMES</a>
-  <a href="networks.html">NETWORKS</a>
-</nav>
+<main>
+<input id="search" type="search" placeholder="Search games...">
 
-<section class="hero">
-  <h1>DESCUBRE TU <span>PRÓXIMO JUEGO</span></h1>
-  <p>
-    Explora videojuegos, descubre nuevas aventuras
-    y encuentra herramientas digitales.
-  </p>
-</section>
+<div class="categories">
+<button class="active" data-category="All">All</button>
+<button data-category="Action">Action</button>
+<button data-category="Adventure">Adventure</button>
+<button data-category="Racing">Racing</button>
+<button data-category="Sports">Sports</button>
+<button data-category="Anime">Anime</button>
+</div>
 
-<main class="container">
-
-  <section class="card">
-    <span class="number">01 / VIDEOJUEGOS</span>
-    <h2>🎮 PLAY GAMES</h2>
-    <p>
-      Descubre juegos gratuitos de Google Play
-      de todos los géneros.
-    </p>
-    <a class="btn" href="playgames.html">EXPLORAR →</a>
-  </section>
-
-  <section class="card">
-    <span class="number">02 / INDEPENDIENTES</span>
-    <h2>🕹️ INDIE GAMES</h2>
-    <p>
-      Descubre juegos independientes
-      y proyectos originales.
-    </p>
-    <a class="btn" href="indiegames.html">EXPLORAR →</a>
-  </section>
-
-  <section class="card">
-    <span class="number">03 / PREMIUM</span>
-    <h2>💎 PAY GAMES</h2>
-    <p>
-      Encuentra videojuegos de pago,
-      sus precios y enlaces oficiales.
-    </p>
-    <a class="btn" href="paygames.html">EXPLORAR →</a>
-  </section>
-
-  <section class="card">
-    <span class="number">04 / HERRAMIENTAS</span>
-    <h2>🛠️ NETWORKS</h2>
-    <p>
-      Descubre aplicaciones de edición,
-      diseño y creatividad.
-    </p>
-    <a class="btn" href="networks.html">EXPLORAR →</a>
-  </section>
-
+<div id="games"></div>
+<p id="empty" hidden>No games found.</p>
 </main>
 
-<footer>
-  © 2026 GAMELOCAL
-  <p>Tu universo gamer y digital.</p>
-</footer>
+<script>
+const games = [
+{
+name:"Roblox",category:"Adventure",
+id:"com.roblox.client",
+image:"https://play-lh.googleusercontent.com/0q9bQ7uYw3Kq4v6n8m5x"
+},
+{
+name:"Brawl Stars",category:"Action",
+id:"com.supercell.brawlstars",
+image:"https://play-lh.googleusercontent.com/6n1n4wZ8"
+},
+{
+name:"Free Fire",category:"Action",
+id:"com.dts.freefireth",
+image:"https://play-lh.googleusercontent.com/8q1w2e3r"
+},
+{
+name:"Subway Surfers",category:"Adventure",
+id:"com.kiloo.subwaysurf",
+image:"https://play-lh.googleusercontent.com/2q8w9e1r"
+},
+{
+name:"Asphalt Legends",category:"Racing",
+id:"com.gameloft.android.ANMP.GloftA9HM",
+image:"https://play-lh.googleusercontent.com/3q8w2e9r"
+},
+{
+name:"eFootball",category:"Sports",
+id:"jp.konami.pesam",
+image:"https://play-lh.googleusercontent.com/4q8w2e9r"
+},
+{
+name:"Mobile Legends",category:"Action",
+id:"com.mobile.legends",
+image:"https://play-lh.googleusercontent.com/5q8w2e9r"
+},
+{
+name:"Pokémon GO",category:"Adventure",
+id:"com.nianticlabs.pokemongo",
+image:"https://play-lh.googleusercontent.com/7q8w2e9r"
+},
+{
+name:"Shadow Fight 4",category:"Action",
+id:"com.nekki.shadowfightarena",
+image:"https://play-lh.googleusercontent.com/9q8w2e9r"
+},
+{
+name:"Dragon Ball Legends",category:"Anime",
+id:"com.bandainamcoent.dblegends_ww",
+image:"https://play-lh.googleusercontent.com/1q8w2e9r"
+}
+];
+
+let selected = "All";
+
+function render(){
+ const query=document.getElementById("search").value.toLowerCase();
+ const filtered=games.filter(g=>
+  (selected==="All"||g.category===selected)&&
+  g.name.toLowerCase().includes(query)
+ );
+
+ document.getElementById("games").innerHTML=filtered.map(g=>`
+ <article class="game">
+ <img src="https://play-lh.googleusercontent.com/${g.id}" alt="${g.name}" loading="lazy">
+ <h3>${g.name}</h3>
+ <a href="https://play.google.com/store/apps/details?id=${g.id}" target="_blank">View on Google Play</a>
+ </article>
+ `).join("");
+
+ document.getElementById("empty").hidden=filtered.length!==0;
+}
+
+document.getElementById("search").addEventListener("input",render);
+
+document.querySelectorAll(".categories button").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelector(".categories .active").classList.remove("active");
+  button.classList.add("active");
+  selected=button.dataset.category;
+  render();
+ });
+});
+
+render();
+</script>
 
 </body>
 </html>
