@@ -4,24 +4,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAMELOCAL - Play Games</title>
+<title>GAMELOCAL | Play Games</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080e1c;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px;background:#101a2d}
-header a{color:#68aaff;text-decoration:none}
-h1{margin-bottom:5px}
-main{padding:18px}
-input{width:100%;padding:15px;background:#142139;border:1px solid #30476b;border-radius:12px;color:white;font-size:16px}
-.categories{display:flex;gap:9px;overflow-x:auto;padding:18px 0}
-button{background:#172b49;color:white;border:0;padding:11px 16px;border-radius:20px;white-space:nowrap}
+body{margin:0;background:#080d18;color:#fff;font-family:Arial,sans-serif}
+header{background:#101b30;padding:22px}
+header a{color:#66aaff;text-decoration:none}
+h1{margin:20px 0 5px}
+main{padding:20px;max-width:1100px;margin:auto}
+input{width:100%;padding:15px;border-radius:12px;border:1px solid #293c5c;background:#111d31;color:white;font-size:16px}
+.categories{display:flex;gap:10px;overflow-x:auto;margin:20px 0}
+button{padding:11px 17px;border:0;border-radius:20px;background:#172943;color:white;white-space:nowrap}
 button.active{background:#287cff}
 #games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.game{background:#142139;border-radius:14px;overflow:hidden}
-.game img{width:100%;aspect-ratio:1;object-fit:cover}
-.game h3{font-size:14px;margin:12px}
-.game a{display:block;text-align:center;background:#287cff;color:white;padding:11px;margin:10px;border-radius:9px;text-decoration:none;font-size:13px}
-#empty{text-align:center;color:#9eabc0}
+.game{background:#111d31;border:1px solid #243957;padding:17px;border-radius:14px}
+.game h3{margin:0 0 10px;font-size:16px}
+.game p{font-size:12px;color:#9baec8}
+.game a{display:block;text-align:center;background:#287cff;color:white;padding:11px;border-radius:9px;text-decoration:none;font-size:13px}
+#empty{text-align:center;color:#9baec8}
+@media(min-width:700px){#games{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -29,7 +30,7 @@ button.active{background:#287cff}
 <header>
 <a href="index.html">← HOME</a>
 <h1>PLAY GAMES</h1>
-<p>Discover free Android games</p>
+<p>Explore free Android games</p>
 </header>
 
 <main>
@@ -49,92 +50,51 @@ button.active{background:#287cff}
 </main>
 
 <script>
-const games = [
-{
-name:"Roblox",category:"Adventure",
-id:"com.roblox.client",
-image:"https://play-lh.googleusercontent.com/0q9bQ7uYw3Kq4v6n8m5x"
-},
-{
-name:"Brawl Stars",category:"Action",
-id:"com.supercell.brawlstars",
-image:"https://play-lh.googleusercontent.com/6n1n4wZ8"
-},
-{
-name:"Free Fire",category:"Action",
-id:"com.dts.freefireth",
-image:"https://play-lh.googleusercontent.com/8q1w2e3r"
-},
-{
-name:"Subway Surfers",category:"Adventure",
-id:"com.kiloo.subwaysurf",
-image:"https://play-lh.googleusercontent.com/2q8w9e1r"
-},
-{
-name:"Asphalt Legends",category:"Racing",
-id:"com.gameloft.android.ANMP.GloftA9HM",
-image:"https://play-lh.googleusercontent.com/3q8w2e9r"
-},
-{
-name:"eFootball",category:"Sports",
-id:"jp.konami.pesam",
-image:"https://play-lh.googleusercontent.com/4q8w2e9r"
-},
-{
-name:"Mobile Legends",category:"Action",
-id:"com.mobile.legends",
-image:"https://play-lh.googleusercontent.com/5q8w2e9r"
-},
-{
-name:"Pokémon GO",category:"Adventure",
-id:"com.nianticlabs.pokemongo",
-image:"https://play-lh.googleusercontent.com/7q8w2e9r"
-},
-{
-name:"Shadow Fight 4",category:"Action",
-id:"com.nekki.shadowfightarena",
-image:"https://play-lh.googleusercontent.com/9q8w2e9r"
-},
-{
-name:"Dragon Ball Legends",category:"Anime",
-id:"com.bandainamcoent.dblegends_ww",
-image:"https://play-lh.googleusercontent.com/1q8w2e9r"
-}
+const games=[
+{name:"Roblox",category:"Adventure",id:"com.roblox.client"},
+{name:"Brawl Stars",category:"Action",id:"com.supercell.brawlstars"},
+{name:"Free Fire",category:"Action",id:"com.dts.freefireth"},
+{name:"Subway Surfers",category:"Adventure",id:"com.kiloo.subwaysurf"},
+{name:"Asphalt Legends",category:"Racing",id:"com.gameloft.android.ANMP.GloftA9HM"},
+{name:"eFootball",category:"Sports",id:"jp.konami.pesam"},
+{name:"Mobile Legends",category:"Action",id:"com.mobile.legends"},
+{name:"Pokémon GO",category:"Adventure",id:"com.nianticlabs.pokemongo"},
+{name:"Shadow Fight 4",category:"Action",id:"com.nekki.shadowfightarena"},
+{name:"Dragon Ball Legends",category:"Anime",id:"com.bandainamcoent.dblegends_ww"}
 ];
 
-let selected = "All";
+let selected="All";
 
 function render(){
- const query=document.getElementById("search").value.toLowerCase();
- const filtered=games.filter(g=>
-  (selected==="All"||g.category===selected)&&
-  g.name.toLowerCase().includes(query)
- );
+const query=document.getElementById("search").value.toLowerCase();
+const filtered=games.filter(g=>
+(selected==="All"||g.category===selected)&&
+g.name.toLowerCase().includes(query)
+);
 
- document.getElementById("games").innerHTML=filtered.map(g=>`
- <article class="game">
- <img src="https://play-lh.googleusercontent.com/${g.id}" alt="${g.name}" loading="lazy">
- <h3>${g.name}</h3>
- <a href="https://play.google.com/store/apps/details?id=${g.id}" target="_blank">View on Google Play</a>
- </article>
- `).join("");
+document.getElementById("games").innerHTML=filtered.map(g=>`
+<div class="game">
+<h3>${g.name}</h3>
+<p>${g.category} · Android</p>
+<a href="https://play.google.com/store/apps/details?id=${g.id}" target="_blank">PLAY NOW</a>
+</div>
+`).join("");
 
- document.getElementById("empty").hidden=filtered.length!==0;
+document.getElementById("empty").hidden=filtered.length!==0;
 }
 
 document.getElementById("search").addEventListener("input",render);
 
 document.querySelectorAll(".categories button").forEach(button=>{
- button.addEventListener("click",()=>{
-  document.querySelector(".categories .active").classList.remove("active");
-  button.classList.add("active");
-  selected=button.dataset.category;
-  render();
- });
+button.addEventListener("click",()=>{
+document.querySelector(".categories .active").classList.remove("active");
+button.classList.add("active");
+selected=button.dataset.category;
+render();
+});
 });
 
 render();
 </script>
-
 </body>
 </html>
