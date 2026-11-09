@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080D18">
+<title>GAMELOCAL - Tu universo gamer</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080D18;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 25px 15px;
+  text-align: center;
+  background: #0D1728;
+}
+
+.logo {
+  color: #60A5FA;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+header p {
+  color: #94A3B8;
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 14px;
+  background: #101B2D;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  background: #1A2D49;
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: 9px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #2563EB;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px 35px;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.hero span {
+  color: #60A5FA;
+}
+
+.hero p {
+  color: #94A3B8;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 15px;
+}
+
+.card {
+  background: linear-gradient(145deg,#172944,#101A2B);
+  border: 1px solid #263B5B;
+  border-radius: 17px;
+  padding: 25px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  color: #60A5FA;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.number {
+  color: #60A5FA;
+  font-size: 12px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563EB;
+  color: white;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #3B82F6;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #64748B;
+  border-top: 1px solid #1E293B;
+}
+
+@media (min-width: 650px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .card {
+    margin: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎮 GAMELOCAL</div>
+  <p>Tu universo gamer y digital</p>
+</header>
+
+<nav>
+  <a href="index.html">INICIO</a>
+  <a href="playgames.html">PLAY GAMES</a>
+  <a href="indiegames.html">INDIE GAMES</a>
+  <a href="paygames.html">PAY GAMES</a>
+  <a href="networks.html">NETWORKS</a>
+</nav>
+
+<section class="hero">
+  <h1>DESCUBRE TU <span>PRÓXIMO JUEGO</span></h1>
+  <p>
+    Explora videojuegos, descubre nuevas aventuras
+    y encuentra herramientas digitales.
+  </p>
+</section>
+
+<main class="container">
+
+  <section class="card">
+    <span class="number">01 / VIDEOJUEGOS</span>
+    <h2>🎮 PLAY GAMES</h2>
+    <p>
+      Descubre juegos gratuitos de Google Play
+      de todos los géneros.
+    </p>
+    <a class="btn" href="playgames.html">EXPLORAR →</a>
+  </section>
+
+  <section class="card">
+    <span class="number">02 / INDEPENDIENTES</span>
+    <h2>🕹️ INDIE GAMES</h2>
+    <p>
+      Descubre juegos independientes
+      y proyectos originales.
+    </p>
+    <a class="btn" href="indiegames.html">EXPLORAR →</a>
+  </section>
+
+  <section class="card">
+    <span class="number">03 / PREMIUM</span>
+    <h2>💎 PAY GAMES</h2>
+    <p>
+      Encuentra videojuegos de pago,
+      sus precios y enlaces oficiales.
+    </p>
+    <a class="btn" href="paygames.html">EXPLORAR →</a>
+  </section>
+
+  <section class="card">
+    <span class="number">04 / HERRAMIENTAS</span>
+    <h2>🛠️ NETWORKS</h2>
+    <p>
+      Descubre aplicaciones de edición,
+      diseño y creatividad.
+    </p>
+    <a class="btn" href="networks.html">EXPLORAR →</a>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 GAMELOCAL
+  <p>Tu universo gamer y digital.</p>
+</footer>
+
+</body>
+</html>
